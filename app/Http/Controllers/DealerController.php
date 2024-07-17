@@ -12,8 +12,8 @@ class DealerController extends Controller
      */
     public function index()
     {
-        $dealers=Dealer::all();
-        return view('dealer.index',compact('dealers'));
+        $dealers = Dealer::all();
+        return view('dealer.index', compact('dealers'));
     }
 
     /**
@@ -30,19 +30,19 @@ class DealerController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'=>'required',
-            'mobile'=>'required',
-            'city'=>'required',
-            'state'=>'required',
+            'name' => 'required',
+            'mobile' => 'required',
+            'city' => 'required',
+            'state' => 'required',
         ]);
-        $dealer=new Dealer();
-        $dealer->name=$request->customer_name;
-        $dealer->mobile=$request->mobile;
-        $dealer->email=$request->email;
-        $dealer->city=$request->city;
-        $dealer->state=$request->state;
+        $dealer = new Dealer();
+        $dealer->name = $request->customer_name;
+        $dealer->mobile = $request->mobile;
+        $dealer->email = $request->email;
+        $dealer->city = $request->city;
+        $dealer->state = $request->state;
         $dealer->save();
-        return redirect()->route('dealer.index')->with('success','Dealer Added Successfully');
+        return redirect()->route('dealer.index')->with('success', 'Dealer Added Successfully');
     }
 
     /**

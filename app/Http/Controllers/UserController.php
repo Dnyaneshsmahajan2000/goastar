@@ -154,9 +154,7 @@ class UserController extends Controller
     {
 
         $users = User::all();
-        $roles = UserRole::all();
-        $godowns = Godown::all();
-        return view('users.create', compact('roles', 'godowns'));
+        return view('users.create', compact('users'));
 
         //
     }
@@ -214,14 +212,6 @@ class UserController extends Controller
         return redirect()->route('user.index')->with('success', 'Password reset to mobile number successfully.');
     }
 
-    public function reset_mpin($id)
-    {
-        $user = User::find($id);
-        $user->pin = null;
-        $user->save();
-
-        return redirect()->route('user.index')->with('success', 'MPIN reset successfully.');
-    }
     public function user_block($id)
     {
         $user = User::find($id);
@@ -252,52 +242,36 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $request = $request->validate([
             'name' => 'required|string|max:255',
             'mobile' => 'required|min:10|max:10',
-            'email' => 'nullable|max:50', // Make email field nullable
+            'dob' => 'required',
             'gender' => 'required|in:male,female',
-            'role_id' => 'required',
-            'gd_id' => 'required|integer',
+            'type' => 'required|in:admin,master,agent,user',
+            'address' => 'nullable',
+            'details' => 'nullable',
             'salary' => 'nullable',
             'password' => 'nullable',
-
             'can_login' => 'nullable',
 
         ]);
         try {
-
-
-            // Find the Employee instance by ID
-            $user = user::find($id);
-
-            // Update Employee instance with validated data
+            $user = new user($id);
             $user->name = ucwords($request['name']);
+            $user->address = $request['address'] ?? null;
+            $user->details = $request['details'] ?? null;
             $user->mobile = $request['mobile'];
-            $user->email = $request['email'];
-
-
             $user->gender = $request['gender'];
-            $user->role_id = $request['role_id'];
+            $user->type = $request['type'];
             $user->can_login = $request['can_login'];
-            $user->gd_id = $request['gd_id'];
+            $user->dob = $request['dob'];
             $user->salary = $request['salary'];
-
             $user->password = bcrypt($request['password']);
             $user->save();
-            $ledger = Ledger::where('ref_id', $id)->first();
-            $ledger->name = $request['name'];
-            $ledger->mobile = $request['mobile'];
-            $ledger->email = $request['email'];
-            $ledger->state = "";
-            $ledger->gd_id = GROUP_SALARY_PAYABLE;
-            $ledger->gd_id = $request['gd_id'];
-            $ledger->save();
             return redirect()->route('user.index')->with("success", 'Updated Successfully');
         } catch (\Exception $e) {
-            // Handle other exceptions
             return redirect()->back()->with("error", 'Error occurred: ' . $e->getMessage())->withInput();
         }
     }

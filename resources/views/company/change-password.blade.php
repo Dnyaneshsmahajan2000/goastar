@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'Update Company'])
+@extends('layouts.app', ['title' => 'Change Password'])
 @section('content')
 
     <div class="card card-body">

@@ -40,7 +40,7 @@
         <!-- auth page content -->
         <div class="auth-page-content">
             <div class="container">
-             
+
 
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-5">
@@ -59,7 +59,7 @@
                                             <input type="text"
                                                 class="form-control @error('mobile') is-invalid @enderror"
                                                 id="usermobile" name='mobile' value="{{ old('mobile') }}"
-                                                placeholder="Enter Mobile" required  autofocus />
+                                                placeholder="Enter Mobile" required autofocus/>
                                             @error('mobile')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -73,7 +73,7 @@
                                             <div class="position-relative auth-pass-inputgroup">
                                                 <input type="password" name= 'password' class="form-control pe-5"
                                                     onpaste="return false" placeholder="Enter password"
-                                                    id="password-inpu" required />
+                                                    id="password-inpu" required autofocus/>
 
                                                 <button
                                                     class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
@@ -92,7 +92,7 @@
 
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">
-                                                Login 
+                                                Login
                                             </button>
                                         </div>
 
@@ -101,7 +101,7 @@
                             </div>
                             <!-- end card body -->
                         </div>
-              
+
                     </div>
                 </div>
                 <!-- end row -->
@@ -110,7 +110,7 @@
         </div>
         <!-- end auth page content -->
 
-    
+
     </div>
     <!-- end auth-page-wrapper -->
 

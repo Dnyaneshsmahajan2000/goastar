@@ -8,18 +8,14 @@
         ul.ui-autocomplete {
             z-index: 1100;
         }
-
         td,
         th {
             padding: 2px !important;
         }
     </style>
-    <meta charset="utf-8" />
-    <!-- CSRF Token -->
+    <meta charset="utf-8"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Kj-Plast') }}</title>
-
+    <title>{{ config('app.name', 'Bholashankar') }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="" name="description" />
     <meta content="" name="author" />
@@ -51,7 +47,6 @@
 
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.css">
 
 
 
@@ -137,10 +132,6 @@
                             </div>
                         </div>
 
-
-
-
-
                         <div class="ms-1 header-item d-none d-sm-flex">
                             <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle"
                                 data-toggle="fullscreen">
@@ -183,10 +174,7 @@
                                         <span class="align-middle">Profile</span>
                                     </a>
 
-                                    <a class="dropdown-item" href="{{ route('auth.lock') }}">
-                                        <i class="mdi mdi-lock text-muted fs-16 align-middle me-1"></i>
-                                        <span class="align-middle">Lock screen</span>
-                                    </a>
+
                                     <form method="POST" action="{{ route('logout') }}">
                                         @csrf
                                         <button type="submit" class='dropdown-item'>
@@ -254,10 +242,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-12">
-  @php
-            Session::put('pin_url', url()->full());
-                            @endphp
-                         
+
                         </div>
 
                     </div>
@@ -312,16 +297,10 @@
 
         <!-- Dashboard init -->
         <script src="{{ @asset('') }}assets/js/pages/dashboard-ecommerce.init.js"></script>
-        <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
 
         <!-- App js -->
         <script src="{{ @asset('') }}assets/js/app.js"></script>
-        <script>
-            $(document).ready(function() {
-                new DataTable('#datatable');
-            });
-        </script>
-       <script>
+        {{-- <script>
             var hiddenTime;
             var elapsedTime = 0;
             document.addEventListener('visibilitychange', function() {
@@ -337,7 +316,7 @@
                     }
                 }
             });
-        </script>
+        </script> --}}
         <script>
             $('#main_date_picker').daterangepicker({
                 @if (isset($date_type) && $date_type == 1)

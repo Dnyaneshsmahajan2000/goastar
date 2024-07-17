@@ -57,16 +57,11 @@ class LoginController extends Controller
             $user = Auth::user();
             $this->authenticated($request, Auth::user());
 
-            if (!empty($user->pin)) {
-
-
-                return redirect()->intended(route('mpin.index'));
-            } else {
-                return redirect()->intended(route('mpin.create'));
-            }
+           
+                return redirect()->intended(route('home'));
+           
         }
 
-        // Authentication failed, redirect back with input
         return redirect()->back()->withInput($request->only('mobile'));
     }
 

@@ -10,261 +10,124 @@
                         <div class="d-flex align-items-lg-center flex-lg-row flex-column">
                             <div class="flex-grow-1"><br>
                                 <h4 class="fs-16 mb-1">Hey, {{ @ucwords(Auth::user()->name) }} </h4>
-                                <p class="text-muted mb-0">Here's what's happening with your company today.</p>
+                                <p class="text-muted mb-0">Let’s Play and Share. Enjoy your Game today.</p>
                             </div>
                         </div><!-- end card header -->
                     </div>
                     <!--end col-->
                 </div>
                 <!--end row-->
-                @if (Auth::user()->role->name == 'Admin' || Auth::user()->role->name == 'SuperAdmin')
-
                 <div class="row">
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <p class="text-uppercase fw-medium text-muted mb-0">
-                                            <a href="{{ route('report.order') }}" class="text-decoration-none"> Total
-                                                Pending Order</a>
+                                    <div class="avatar-sm flex-shrink-0">
+                                        <span class="avatar-title bg-soft-primary text-primary rounded-2 fs-2">
+                                            <i class="ri-user-3-fill"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden ms-3">
+                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Users</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
+                                                    data-target="<?php //echo $users; ?>"></span>
+                                            </h4>
+                                        </div>
                                         </p>
                                     </div>
-
                                 </div>
-                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                    <div>
-                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                            <span class="counter-value" data-target="<?php echo round($count, 2);
-                                            ?>">0</span>
-                                        </h4>
-                                    </div>
-                                    <div class="avatar-sm flex-shrink-0">
-                                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#0ab39c" style="width: 55px; height: 55px">
-                                        </lord-icon>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end card body -->
+                            </div><!-- end card body -->
                         </div>
-                        <!-- end card -->
                     </div>
-                    <div class="col-xl-3 col-md-6">
-
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <p class="text-uppercase fw-medium text-muted mb-0">
-                                            <a href="{{ route('report.minstockqty.view') }}" class="text-decoration-none">Min
-                                                Stock Finish
-                                                Goods Items</a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                    <div>
-                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                            <span class="counter-value" data-target="<?php echo round($item_count_FG, 2);
-                                            ?>">0</span>
-                                        </h4>
-                                    </div>
                                     <div class="avatar-sm flex-shrink-0">
-                                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#0ab39c" style="width: 55px; height: 55px">
-                                        </lord-icon>
+                                        <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
+                                            <i class="ri-file-list-3-line"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden ms-3">
+                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Games</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
+                                                    data-target="<?php //echo $games; ?>"></span></h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- end card body  -->
+                            </div><!-- end card body -->
                         </div>
                     </div>
-                    <!-- end col -->
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <p class="text-uppercase fw-medium text-muted mb-0">
-                                            <a href="{{ route('report.inactivereport') }}" class="text-decoration-none">
-                                                Total
-                                                Inactive Customers</a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                    <div>
-                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                            <span class="counter-value" data-target="<?php //echo round($inactive_ledgers_count, 2);
-                                            ?>">0</span>
-                                        </h4>
-                                    </div>
                                     <div class="avatar-sm flex-shrink-0">
-                                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#0ab39c" style="width: 55px; height: 55px">
-                                        </lord-icon>
+                                        <span class="avatar-title bg-soft-success text-success rounded-2 fs-2">
+                                            <i class="ri-file-list-fill"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden ms-3">
+                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Results</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
+                                                    data-target="<?php //echo $results; ?>"></span></h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- end card body -->
+                            </div><!-- end card body -->
                         </div>
-                        <!-- end card -->
                     </div>
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <p class="text-uppercase fw-medium text-muted mb-0">
-                                            <a href="{{ route('report.payable.view') }}" class="text-decoration-none"> Total
-                                                Payable</a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                    <div>
-                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                            Rs.<span class="counter-value" data-target="<?php
-                                            
-                                            $total_balance_payable = abs($total_balance_payable);
-                                            echo round($total_balance_payable, 2);
-                                            ?>">0</span>
-                                        </h4>
-                                    </div>
                                     <div class="avatar-sm flex-shrink-0">
-                                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#0ab39c" style="width: 55px; height: 55px">
-                                        </lord-icon>
+                                        <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
+                                            <i class="ri-file-list-3-line"></i>
+                                        </span>
+                                    </div>
+                                    <div class="flex-grow-1 overflow-hidden ms-3">
+                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Dealers
+                                        </p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
+                                                    data-target="<?php //echo $dealers; ?>"></span>
+                                            </h4>
+                                        </div>
+
                                     </div>
                                 </div>
-                            </div>
-                            <!-- end card body -->
+                            </div><!-- end card body -->
                         </div>
-                        <!-- end card -->
                     </div>
-                    <!-- end col -->
-                    <div class="col-xl-3 col-md-6">
-                        <!-- card -->
+                    <div class="col-xl-4">
                         <div class="card card-animate">
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <p class="text-uppercase fw-medium text-muted mb-0">
-                                            <a href="{{ route('report.receivable.view') }}" class="text-decoration-none"> Total
-                                                receivable</a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                    <div>
-                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                            Rs.<span class="counter-value" data-target="<?php
-                                            $total_balance_receivable = abs($total_balance_receivable);
-                                            echo round($total_balance_receivable, 2);
-                                            ?>">0</span>
-                                        </h4>
-                                    </div>
                                     <div class="avatar-sm flex-shrink-0">
-                                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#0ab39c" style="width: 55px; height: 55px">
-                                        </lord-icon>
+                                        <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
+                                            <i class="ri-file-list-3-line"></i>
+                                        </span>
                                     </div>
-                                </div>
-                            </div>
-                            <!-- end card body -->
-                        </div>
-                        <!-- end card -->
-                    </div>
-
-                    <div class="col-xl-3 col-md-6">
-
-                        <div class="card card-animate">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <p class="text-uppercase fw-medium text-muted mb-0">
-                                            <a href="{{ route('report.minstockqty.view') }}"
-                                                ordersummaryclass="text-decoration-none"> Min Stock Raw
-                                                items</a>
+                                    <div class="flex-grow-1 overflow-hidden ms-3">
+                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-3">Recharges
                                         </p>
-                                    </div>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
+                                                    data-target="<?php// echo $recharges; ?>"></span></h4>
+                                        </div>
 
-                                </div>
-                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                    <div>
-                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                            <span class="counter-value" data-target="<?php echo round($item_count_RM, 2);
-                                            ?>">0</span>
-                                        </h4>
-                                    </div>
-                                    <div class="avatar-sm flex-shrink-0">
-                                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#0ab39c" style="width: 55px; height: 55px">
-                                        </lord-icon>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- end card body  -->
+                            </div><!-- end card body -->
                         </div>
                     </div>
-                    <!-- end col -->
 
-
-                    <!-- end col -->
-
-                    <div class="col-xl-3 col-md-6">
-
-                        <div class="card card-animate">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-grow-1">
-                                        <p class="text-uppercase fw-medium text-muted mb-0">
-                                            <a href="{{ route('report.report30daysdebtors') }}"
-                                                class="text-decoration-none"> Last 30 Days
-                                                Customer</a>
-                                        </p>
-                                    </div>
-
-                                </div>
-                                <div class="d-flex align-items-end justify-content-between mt-4">
-                                    <div>
-                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                            <?php echo "<span class='counter-value' data-target='" . round($customer_count, 2) . "'>0</span>";
-                                            ?>
-                                        </h4>
-                                        <span class="badge bg-warning me-1"><?php //echo ;
-                                        ?></span>
-                                    </div>
-                                    <div class="avatar-sm flex-shrink-0">
-                                        <lord-icon src="https://cdn.lordicon.com/qhviklyi.json" trigger="loop"
-                                            colors="primary:#405189,secondary:#0ab39c" style="width: 55px; height: 55px">
-                                        </lord-icon>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end card body -->
-                        </div>
-                        <!-- end card  -->
-                    </div>
-                    <!-- end col -->
-
-                    <!-- end col -->
-
-
-                    <!-- end col -->
-
-                </div> <!-- end .h-100-->
-                                @endif
-
-            </div> <!-- end col -->
+                </div>
+            </div>
         </div>
     </div>
 @endsection
