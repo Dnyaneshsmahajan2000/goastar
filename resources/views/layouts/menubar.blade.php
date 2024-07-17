@@ -126,13 +126,19 @@
                         </div>
                     </li>
                 @endif
-                @if (isset($access['Manufacturing']) && $access['Manufacturing']['add'] == '1')
+              
                     <li class="nav-item">
-                        <a class="nav-link menu-link" href="{{ url('vchmfg/create') }}">
-                            <i class='bx bx-chair'></i> <span data-key="t-dashboards">Manufacturing</span>
+                        <a class="nav-link menu-link" href="{{ url('user/create') }}">
+                            <i class='ri-user-3-fill'></i> <span data-key="t-dashboards">Users</span>
                         </a>
                     </li>
-                @endif
+               
+                    <li class="nav-item">
+                        <a class="nav-link menu-link" href="{{ url('dealer/create') }}">
+                            <i class='ri-user-3-fill'></i> <span data-key="t-dashboards">Dealers</span>
+                        </a>
+                    </li>
+              
                 @if (
                     (isset($access['Employee']) && $access['Employee']['add'] == '1') ||
                         (isset($access['Employee_Attendance']) && $access['Employee_Attendance']['add'] == '1') ||

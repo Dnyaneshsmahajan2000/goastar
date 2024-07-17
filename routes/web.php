@@ -36,6 +36,7 @@ use App\Models\VchItem;
 use App\Models\VchMfg;
 use App\Models\VchStockJournal;
 use App\Http\Controllers\AuthController; // Adjust the namespace as needed
+use App\Http\Controllers\DealerController;
 use App\Http\Controllers\EmployeeExpensesController;
 use App\Http\Controllers\MpinController;
 use App\Http\Middleware\CheckMpin;
@@ -119,6 +120,13 @@ Route::get('/convert-salary-to-transactions', [UserController::class, 'convertSa
     Route::post('/user/{id}/password/update', [UserController::class, 'updatePassword'])->name('user.password.update');
     Route::post('user/{id}/block', [UserController::class,'block'])->name('user.block');
     Route::post('user/{id}/unblock', [UserController::class,'unblock'])->name('user.unblock');
+
+    Route::get('dealer',[DealerController::class,'index'])->name('dealer.index');
+    Route::get('dealer/create',[DealerController::class,'create'])->name('dealer.create');
+    Route::post('dealer/create/save',[DealerController::class,'store'])->name('dealer.store');
+    Route::get('dealer/{id}/edit',[DealerController::class,'edit'])->name('dealer.edit');
+    Route::get('dealer/{id}/update',[DealerController::class,'update'])->name('dealer.update');
+    Route::get('dealer/{id}/delete',[DealerController::class,'destory'])->name('dealer.delete');
 
 
     Route::prefix('items')->group(function () {
