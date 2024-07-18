@@ -14,18 +14,18 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->nullable();
             $table->string('mobile');
-            $table->foreignId('ledger_id')->nullable()->constrained('ledgers');
+            $table->string('dob');
+            $table->string('address')->nullable();
+            $table->string('details')->nullable();
             $table->enum('gender',['male','female','other']);
-            $table->integer('role_id');
-            $table->integer('gd_id')->default(1);
+            $table->enum('type',['admin','master','agent', 'user']);
             $table->string('salary')->nullable();
             $table->string('password')->nullable();
             $table->boolean('can_login')->default(false);
-            $table->string('pin',6)->nullable();
             $table->text('permission')->nullable();
-            
+            $table->text('is_blocked')->default(false);
+
             $table->softDeletes(); // Adds 'deleted_at' column
             $table->rememberToken();
             $table->timestamps();
