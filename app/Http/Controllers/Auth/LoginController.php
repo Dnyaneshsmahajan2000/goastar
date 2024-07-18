@@ -55,12 +55,17 @@ class LoginController extends Controller
         // Attempt to authenticate the user
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
-            $this->authenticated($request, Auth::user());
-
-           
+            if ($user->is_blocked == 1) {
+                Auth::logout();
+                return redirect()->back()->withErrors(['Your account is blocked. Please contact support.']);
+            } else {
+                $this->authenticated($request, $user);
                 return redirect()->intended(route('home'));
-           
+            }
+        } else {
+            return redirect()->back()->withErrors(['The provided credentials do not match our records.']);
         }
+        
 
         return redirect()->back()->withInput($request->only('mobile'));
     }

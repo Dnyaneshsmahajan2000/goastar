@@ -35,10 +35,21 @@
                             <td>
                                 <a href="{{ route('user.edit', $user->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                 <a href="{{ route('user.change.password', $user->id) }}" class="btn btn-sm btn-secondary">Change Password</a>
-                                <form action="{{ route('user.block', $user->id) }}" method="POST" style="display:inline;">
-                                    @csrf
-                                    <button type="submit" class="btn btn-sm btn-danger">Block</button>
-                                </form>
+                                
+                                @if ($user->is_blocked==1)
+                                    <form action="{{ route('user.unblock', $user->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-danger">Unblock</button>
+                                    </form>
+                                @else
+                                    <form action="{{ route('user.block', $user->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        <button type="submit" class="btn btn-sm btn-danger">Block</button>
+                                    </form>
+                                
+                                    
+                                @endif
+                            
                             </td>
                         </tr>
                         @endforeach

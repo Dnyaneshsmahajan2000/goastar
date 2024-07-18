@@ -10,12 +10,13 @@ use App\Http\Controllers\DealerController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MpinController;
 use App\Http\Controllers\ResultController;
+use App\Http\Controllers\RechargeController;
 
 Auth::routes();
 
 Route::middleware(['web', 'auth'])->group(function () {
 
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/company', [CompanyController::class, 'index'])->name('company.edit');
     Route::get('/change-password', [CompanyController::class, 'change_password'])->name('change.password');
     Route::post('/change-password-save', [CompanyController::class, 'change_password_save'])->name('changepassword.save');
@@ -47,6 +48,15 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::post('/results/closeSave', [ResultController::class, 'storecloseTimeResult'])->name('results.closeSave');
     Route::post('/results/create', [ResultController::class, 'create'])->name('results.create');
 
+    Route::put('dealer/{id}/update', [DealerController::class, 'update'])->name('dealer.update');
+    Route::delete('dealer/{id}/delete', [DealerController::class, 'destroy'])->name('dealer.destroy');
+
+    Route::get('recharge',[RechargeController::class,'index'])->name('recharge.index');
+    Route::get('recharge/create',[RechargeController::class,'create'])->name('recharge.create');
+    Route::post('recharge/create/save',[RechargeController::class,'store'])->name('recharge.store');
+    Route::get('recharge/{id}/edit',[RechargeController::class,'edit'])->name('recharge.edit');
+    Route::put('recharge/{id}/update',[RechargeController::class,'update'])->name('recharge.update');
+    Route::delete('recharge/{id}/delete',[RechargeController::class,'destroy'])->name('recharge.destroy');
 
 
 
