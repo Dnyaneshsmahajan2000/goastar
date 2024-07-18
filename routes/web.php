@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DealerController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MpinController;
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\RechargeController;
@@ -46,7 +47,6 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::post('/results/store', [ResultController::class, 'store'])->name('results.store');
     Route::post('/results/openSave', [ResultController::class, 'storeOpenTimeResult'])->name('results.openSave');
     Route::post('/results/closeSave', [ResultController::class, 'storecloseTimeResult'])->name('results.closeSave');
-    Route::post('/results/create', [ResultController::class, 'create'])->name('results.create');
 
     Route::put('dealer/{id}/update', [DealerController::class, 'update'])->name('dealer.update');
     Route::delete('dealer/{id}/delete', [DealerController::class, 'destroy'])->name('dealer.destroy');

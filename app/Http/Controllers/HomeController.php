@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dealer;
+use App\Models\Game;
 use App\Models\Group;
 use App\Models\Ledger;
+use App\Models\Recharge;
+use App\Models\Result;
 use App\Models\transaction;
+use App\Models\User;
 use App\Models\VchGstSalePurchase;
 use App\Models\VchSalePurchase;
 use Illuminate\Http\Request;
@@ -31,6 +36,11 @@ class HomeController extends Controller
     public function index()
     {
 
-        return view('home');
+        $users = User::count();
+        $games = Game::count();
+        $results = Result::count();
+        $dealers = Dealer::count();
+        $recharges = Recharge::count();
+        return view('home', compact('users','games','results','dealers', 'recharges'));
     }
 }

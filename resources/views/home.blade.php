@@ -31,7 +31,7 @@
                                         <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Users</p>
                                         <div class="d-flex align-items-center mb-3">
                                             <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                    data-target="<?php //echo $users; ?>"></span>
+                                                    data-target="<?php echo $users; ?>"></span>
                                             </h4>
                                         </div>
                                         </p>
@@ -53,7 +53,7 @@
                                         <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Games</p>
                                         <div class="d-flex align-items-center mb-3">
                                             <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                    data-target="<?php //echo $games; ?>"></span></h4>
+                                                    data-target="<?php echo $games; ?>"></span></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -73,7 +73,7 @@
                                         <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Results</p>
                                         <div class="d-flex align-items-center mb-3">
                                             <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                    data-target="<?php //echo $results; ?>"></span></h4>
+                                                    data-target="<?php echo $results; ?>"></span></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                         </p>
                                         <div class="d-flex align-items-center mb-3">
                                             <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                    data-target="<?php //echo $dealers; ?>"></span>
+                                                    data-target="<?php echo $dealers; ?>"></span>
                                             </h4>
                                         </div>
 
@@ -117,7 +117,7 @@
                                         </p>
                                         <div class="d-flex align-items-center mb-3">
                                             <h4 class="fs-4 flex-grow-1 mb-0"><span class="counter-value"
-                                                    data-target="<?php// echo $recharges; ?>"></span></h4>
+                                                    data-target="<?php echo $recharges; ?>"></span></h4>
                                         </div>
 
                                     </div>

@@ -24,7 +24,6 @@ class ResultController extends Controller
         $result->game_id = $request->game_id;
         $result->open_3 = $request->open_3;
         $result->open_1 = $request->open_1;
-        $result->open_1 = $request->open_1;
         $result->date = now()->format('Y-m-d');
 
         if (!empty($request->game_id)) {
@@ -32,21 +31,19 @@ class ResultController extends Controller
             if ($result) {
                 return redirect()->route('results.index')->with('success', 'Data Inserted Successfully!');
             } else {
-                return redirect()->route('results.create')->with('error', 'Data Failed to insert!');
+                return redirect()->route('results.index')->with('error', 'Data Failed to insert!');
             }
         } else {
-            return redirect()->route('results.create')->with('error', 'Game ID is missing!');
+            return redirect()->route('results.index')->with('error', 'Game ID is missing!');
         }
     }
 
     public function storeCloseTimeResult(Request $request)
     {
-        return $result = Result::find($request->game_id);
-
-        $result->game_id = $request->game_id;
-        $result->open_3 = $request->open_3;
-        $result->open_1 = $request->open_1;
-        $result->open_1 = $request->open_1;
+        $result = Result::find($request->game_id);
+        // $result->game_id = $request->game_id;
+        $result->close_3 = $request->close_3;
+        $result->close_1 = $request->close_1;
         $result->date = now()->format('Y-m-d');
 
         if (!empty($request->game_id)) {
@@ -54,10 +51,10 @@ class ResultController extends Controller
             if ($result) {
                 return redirect()->route('results.index')->with('success', 'Data Inserted Successfully!');
             } else {
-                return redirect()->route('results.create')->with('error', 'Data Failed to insert!');
+                return redirect()->route('results.index')->with('error', 'Data Failed to insert!');
             }
         } else {
-            return redirect()->route('results.create')->with('error', 'Game ID is missing!');
+            return redirect()->route('results.index')->with('error', 'Game ID is missing!');
         }
     }
 }
