@@ -47,63 +47,59 @@
                         <div class="card mt-4">
                             <div class="card-body p-4">
                                 <div class="text-center mt-2">
-                                    <h5 class="text-primary">Welcome Back !</h5>
+                                    <h5 class="text-primary">Welcome Back!</h5>
                                 </div>
                                 <div class="p-2 mt-4">
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
-
+                
                                         <div class="mb-3">
-                                            <label for="useremail" class="form-label">Mobile<span
-                                                    class="text-danger">*</span></label>
+                                            <label for="usermobile" class="form-label">Mobile<span class="text-danger">*</span></label>
                                             <input type="text"
-                                                class="form-control @error('mobile') is-invalid @enderror"
-                                                id="usermobile" name='mobile' value="{{ old('mobile') }}"
-                                                placeholder="Enter Mobile" required autofocus/>
+                                                   class="form-control @error('mobile') is-invalid @enderror"
+                                                   id="usermobile" name='mobile' value="{{ old('mobile') }}"
+                                                   placeholder="Enter Mobile" required autofocus />
                                             @error('mobile')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
                                         </div>
-
-
+                
                                         <div class="mb-3">
                                             <label class="form-label" for="password-input">Password</label>
                                             <div class="position-relative auth-pass-inputgroup">
-                                                <input type="password" name= 'password' class="form-control pe-5"
-                                                    onpaste="return false" placeholder="Enter password"
-                                                    id="password-inpu" required autofocus/>
-
+                                                <input type="password" name='password' class="form-control pe-5 @error('password') is-invalid @enderror"
+                                                       onpaste="return false" placeholder="Enter password"
+                                                       id="password-input" required />
+                
                                                 <button
                                                     class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                     type="button" id="password-addon">
                                                     <i class="ri-eye-fill align-middle"></i>
                                                 </button>
                                                 @error('password')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                                 @enderror
                                             </div>
                                         </div>
-
-
-
+                
                                         <div class="mt-4">
                                             <button class="btn btn-success w-100" type="submit">
                                                 Login
                                             </button>
                                         </div>
-
+                
                                     </form>
                                 </div>
                             </div>
                             <!-- end card body -->
                         </div>
-
                     </div>
                 </div>
+                
                 <!-- end row -->
             </div>
             <!-- end container -->

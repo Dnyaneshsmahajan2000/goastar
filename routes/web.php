@@ -9,6 +9,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DealerController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MpinController;
+use App\Http\Controllers\RechargeController;
 
 Auth::routes();
 
@@ -36,7 +37,13 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('dealer/{id}/edit', [DealerController::class, 'edit'])->name('dealer.edit');
     Route::put('dealer/{id}/update', [DealerController::class, 'update'])->name('dealer.update');
     Route::delete('dealer/{id}/delete', [DealerController::class, 'destroy'])->name('dealer.destroy');
-    
+
+    Route::get('recharge',[RechargeController::class,'index'])->name('recharge.index');
+    Route::get('recharge/create',[RechargeController::class,'create'])->name('recharge.create');
+    Route::post('recharge/create/save',[RechargeController::class,'store'])->name('recharge.store');
+    Route::get('recharge/{id}/edit',[RechargeController::class,'edit'])->name('recharge.edit');
+    Route::put('recharge/{id}/update',[RechargeController::class,'update'])->name('recharge.update');
+    Route::delete('recharge/{id}/delete',[RechargeController::class,'destroy'])->name('recharge.destroy'); 
 
     Route::get('game',[GameController::class,'index'])->name('game.index');
 

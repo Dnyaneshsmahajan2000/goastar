@@ -105,11 +105,11 @@
                     <div class="collapse menu-dropdown" id="sidebarLayouts5">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="{{ route('dealer.create') }}" class="nav-link" data-key="t-two-column">Add
+                                <a href="{{ route('recharge.create') }}" class="nav-link" data-key="t-two-column">Add
                                     Recharge</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('dealer.index') }}" class="nav-link"
+                                <a href="{{ route('recharge.index') }}" class="nav-link"
                                     data-key="t-two-column">View All Recharges</a>
                             </li>
                         </ul>

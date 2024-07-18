@@ -244,6 +244,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // return $request->all();
         $request = $request->validate([
             'name' => 'required|string|max:255',
             'mobile' => 'required|min:10|max:10',
@@ -253,12 +254,11 @@ class UserController extends Controller
             'address' => 'nullable',
             'details' => 'nullable',
             'salary' => 'nullable',
-            'password' => 'nullable',
             'can_login' => 'nullable',
 
         ]);
         try {
-            $user = new user($id);
+            $user = User::findOrFail($id);
             $user->name = ucwords($request['name']);
             $user->address = $request['address'] ?? null;
             $user->details = $request['details'] ?? null;
@@ -268,7 +268,6 @@ class UserController extends Controller
             $user->can_login = $request['can_login'];
             $user->dob = $request['dob'];
             $user->salary = $request['salary'];
-            $user->password = bcrypt($request['password']);
             $user->save();
             return redirect()->route('user.index')->with("success", 'Updated Successfully');
         } catch (\Exception $e) {
