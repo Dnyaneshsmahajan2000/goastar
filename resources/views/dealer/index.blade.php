@@ -25,17 +25,20 @@
                     <tbody>
                         @foreach($dealers as $dealer)
                         <tr>
-                            <td>{{ $dealer->name }}</td>
+                            <td>{{ ucwords($dealer->name) }}</td>
                             <td>{{ $dealer->mobile }}</td>
-                            <td>{{ $dealer->address }}</td>
-                            <td>{{ $dealer->type }}</td>
+                            <td>{{ $dealer->email }}</td>
+                            <td>{{ ucwords($dealer->city) }}</td>
+                            <td>{{ $dealer->state }}</td>
                             <td>
                                 <a href="{{ route('dealer.edit', $dealer->id) }}" class="btn btn-sm btn-warning">Edit</a>
                                
-                                <form action="{{ route('dealer.delete', $dealer->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('dealer.destroy', $dealer->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this dealer?');">
                                     @csrf
+                                    @method('DELETE')
                                     <button type="submit" class="btn btn-sm btn-danger">Delete</button>
                                 </form>
+                                
                             </td>
                         </tr>
                         @endforeach

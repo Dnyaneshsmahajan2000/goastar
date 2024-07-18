@@ -29,14 +29,16 @@ class DealerController extends Controller
      */
     public function store(Request $request)
     {
+       
         $request->validate([
             'name' => 'required',
-            'mobile' => 'required',
+            'mobile' => 'required|min:10|max:10',
             'city' => 'required',
             'state' => 'required',
+            
         ]);
         $dealer = new Dealer();
-        $dealer->name = $request->customer_name;
+        $dealer->name = $request->name;
         $dealer->mobile = $request->mobile;
         $dealer->email = $request->email;
         $dealer->city = $request->city;
@@ -56,24 +58,34 @@ class DealerController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Dealer $dealer)
+    public function edit($id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+        return view('dealer.edit',compact('dealer'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Dealer $dealer)
+    public function update(Request $request,  $id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+        $dealer->name=$request->name;
+        $dealer->mobile=$request->mobile;
+        $dealer->email=$request->email;
+        $dealer->city=$request->city;
+        $dealer->state=$request->state;
+        $dealer->save();
+        return redirect()->route('dealer.index')->with('success','Dealer updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Dealer $dealer)
+    public function destroy(Dealer $dealer ,$id)
     {
-        //
+        $dealer=Dealer::findOrFail($id);
+        $dealer->delete();
+        return redirect()->route('dealer.index')->with('Dealer Deleted Successfully');
     }
 }

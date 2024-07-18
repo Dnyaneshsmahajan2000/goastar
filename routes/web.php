@@ -30,12 +30,13 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     Route::resource('/user', UserController::class);
 
-    Route::get('dealer',[DealerController::class,'index'])->name('dealer.index');
-    Route::get('dealer/create',[DealerController::class,'create'])->name('dealer.create');
-    Route::post('dealer/create/save',[DealerController::class,'store'])->name('dealer.store');
-    Route::get('dealer/{id}/edit',[DealerController::class,'edit'])->name('dealer.edit');
-    Route::get('dealer/{id}/update',[DealerController::class,'update'])->name('dealer.update');
-    Route::get('dealer/{id}/delete',[DealerController::class,'destory'])->name('dealer.delete');
+    Route::get('dealer', [DealerController::class, 'index'])->name('dealer.index');
+    Route::get('dealer/create', [DealerController::class, 'create'])->name('dealer.create');
+    Route::post('dealer/create/save', [DealerController::class, 'store'])->name('dealer.store');
+    Route::get('dealer/{id}/edit', [DealerController::class, 'edit'])->name('dealer.edit');
+    Route::put('dealer/{id}/update', [DealerController::class, 'update'])->name('dealer.update');
+    Route::delete('dealer/{id}/delete', [DealerController::class, 'destroy'])->name('dealer.destroy');
+    
 
     Route::get('game',[GameController::class,'index'])->name('game.index');
 
