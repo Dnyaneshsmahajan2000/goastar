@@ -9,6 +9,7 @@ use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\DealerController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\MpinController;
+use App\Http\Controllers\ResultController;
 
 Auth::routes();
 
@@ -23,27 +24,35 @@ Route::middleware(['web', 'auth'])->group(function () {
 
     Route::get('/user/reset-password/{id}', [UserController::class, 'reset_password'])->name('user.reset_password');
 
-    Route::get('user/{id}/changePassword', [UserController::class,'changePassword'])->name('user.change.password');
+    Route::get('user/{id}/changePassword', [UserController::class, 'changePassword'])->name('user.change.password');
     Route::post('/user/{id}/password/update', [UserController::class, 'updatePassword'])->name('user.password.update');
-    Route::post('user/{id}/block', [UserController::class,'block'])->name('user.block');
-    Route::post('user/{id}/unblock', [UserController::class,'unblock'])->name('user.unblock');
+    Route::post('user/{id}/block', [UserController::class, 'block'])->name('user.block');
+    Route::post('user/{id}/unblock', [UserController::class, 'unblock'])->name('user.unblock');
 
     Route::resource('/user', UserController::class);
 
-    Route::get('dealer',[DealerController::class,'index'])->name('dealer.index');
-    Route::get('dealer/create',[DealerController::class,'create'])->name('dealer.create');
-    Route::post('dealer/create/save',[DealerController::class,'store'])->name('dealer.store');
-    Route::get('dealer/{id}/edit',[DealerController::class,'edit'])->name('dealer.edit');
-    Route::get('dealer/{id}/update',[DealerController::class,'update'])->name('dealer.update');
-    Route::get('dealer/{id}/delete',[DealerController::class,'destory'])->name('dealer.delete');
+    Route::get('dealer', [DealerController::class, 'index'])->name('dealer.index');
+    Route::get('dealer/create', [DealerController::class, 'create'])->name('dealer.create');
+    Route::post('dealer/create/save', [DealerController::class, 'store'])->name('dealer.store');
+    Route::get('dealer/{id}/edit', [DealerController::class, 'edit'])->name('dealer.edit');
+    Route::get('dealer/{id}/update', [DealerController::class, 'update'])->name('dealer.update');
+    Route::get('dealer/{id}/delete', [DealerController::class, 'destory'])->name('dealer.delete');
 
-    Route::get('game',[GameController::class,'index'])->name('game.index');
+    Route::get('game', [GameController::class, 'index'])->name('game.index');
+
+
+    Route::get('/results', [ResultController::class, 'index'])->name('results.index');
+    Route::post('/results/store', [ResultController::class, 'store'])->name('results.store');
+    Route::post('/results/openSave', [ResultController::class, 'storeOpenTimeResult'])->name('results.openSave');
+    Route::post('/results/closeSave', [ResultController::class, 'storecloseTimeResult'])->name('results.closeSave');
+    Route::post('/results/create', [ResultController::class, 'create'])->name('results.create');
+
+
 
 
 
     Route::get('date/change', [DateController::class, 'change_date'])->name('date.change');
     Route::get('date', [DateController::class, 'index']);
-
 });
 
 Route::prefix('admin')->middleware(['auth'])->group(function () {
