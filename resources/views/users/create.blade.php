@@ -6,7 +6,7 @@
             <div class="card">
                 <div class="card-header p-2 bg-primary ">
                     <div class="d-sm-flex align-items-center justify-content-between">
-                        <h6 class="mb-sm-0 text-white">Add New Employee</h6>
+                        <h6 class="mb-sm-0 text-white">Add New User</h6>
                         <div class="page-title-right">
                             <a title="Alt + A" id='view-all-button' href='{{ @route('user.index') }}'
                                 class=" btn btn-sm btn-light">

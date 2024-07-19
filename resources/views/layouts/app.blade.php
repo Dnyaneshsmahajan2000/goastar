@@ -10,7 +10,7 @@
         }
         td,
         th {
-            padding: 2px !important;
+            padding: 6px !important;
         }
     </style>
     <meta charset="utf-8"/>
