@@ -12,9 +12,26 @@ class GameController extends Controller
         return view('game.index', compact('games'));
     }
 
-    public function create()
-    {
-        return view('game.create');
+    public function manage()
+    { 
+        $games = Game::all();
+        return view('game.manage-game', compact('games'));
+    }
+
+    public function enable($id)
+    { 
+        $games = Game::findOrFail($id);
+        $games->disable = 0;
+        $games->save();
+        return redirect()->route('game.manage')->with('success', 'Game is enable  successfully.');
+    }
+
+    public function disable($id)
+    { 
+        $games = Game::findOrFail($id);
+        $games->disable = 1;
+        $games->save();
+        return redirect()->route('game.manage')->with('success', 'Game is disable successfully.');
     }
 
     public function store(Request $request)
@@ -82,11 +99,4 @@ class GameController extends Controller
         return redirect()->route('game.index')->with('success', 'Game deleted successfully.');
     }
 
-    public function disable(Game $game)
-    {
-        $game->disable = !$game->disable;
-        $game->save();
-
-        return redirect()->route('game.index')->with('success', 'Game status updated successfully.');
-    }
 }

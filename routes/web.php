@@ -41,6 +41,9 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('dealer/{id}/delete', [DealerController::class, 'destory'])->name('dealer.delete');
 
     Route::get('game', [GameController::class, 'index'])->name('game.index');
+    Route::get('game/manage', [GameController::class, 'manage'])->name('game.manage');
+    Route::post('game/{id}/enable', [GameController::class, 'enable'])->name('game.enable');
+    Route::post('game/{id}/disable', [GameController::class, 'disable'])->name('game.disable');
 
 
     Route::get('/results', [ResultController::class, 'index'])->name('results.index');

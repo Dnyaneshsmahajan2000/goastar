@@ -11,7 +11,8 @@
             </div>
             <div class="card-body">
                
-                <table class="table table-bordered">
+                <div class="table-responsive">
+                    <table class="table table-striped align-middle table-nowrap">
                     <thead>
                         <tr>
                             <th>Sr.No</th>
@@ -29,7 +30,7 @@
                         @foreach($recharges as $recharge)
                         <tr>
                             <td>{{$count++}}</td>
-                            <td>{{ $recharge->date }}</td>
+                            <td>{{ date('d-m-Y', strtotime($recharge->date)) }}</td>
                             <td>{{ ucwords($recharge->DealerName->name) }}</td>       
                             <td>{{ $recharge->amount }}</td>
                             <td>{{ ucwords($recharge->details) }}</td>
@@ -48,6 +49,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                </div>
             </div>
         </div><!-- end card -->
     </div>
