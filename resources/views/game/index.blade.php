@@ -4,19 +4,7 @@
     <div class='row'>
         <div class='col-lg-12'>
             <div class="card">
-                <div class="card-header p-2 bg-primary ">
-                    <div class="d-sm-flex align-items-center justify-content-between">
-                        <h6 class="mb-sm-0 text-white">Add New Dealer</h6>
-                        <div class="page-title-right">
-                            <a title="Alt + A" id='view-all-button' href='{{ @route('dealer.index') }}'
-                                class=" btn btn-sm btn-light">
-                                View All Dealers
-                            </a>
-                        </div>
-
-
-                    </div>
-                </div>
+                
                 <div class="card-header p-2 bg-primary ">
                     <div class="d-sm-flex align-items-center justify-content-between">
                         <h6 class="mb-sm-0 text-white">All Games</h6>

@@ -98,12 +98,8 @@
                         <i class='ri-hand-coin-fill'></i> <span data-key='t-authentication'>Recharges</span>
                     </a>
                 </li>
-                
-                <li class='nav-item'>
-                    <a id='menu-home' class='nav-link menu-link' href='{{ route('home') }}'>
-                        <i class='ri-home-fill'></i> <span data-key='t-authentication'>Home</span>
-                    </a>
-                </li>
+
+
                 {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts2" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarLayouts2">
