@@ -7,6 +7,14 @@
             <div class="card-header p-2 bg-primary ">
                 <div class="d-sm-flex align-items-center justify-content-between">
                     <h6 class="mb-sm-0 text-white">All Recharge</h6>
+                    <div class="page-title-right">
+                        <a title="Alt + A" id='view-all-button' href='{{ @route('recharge.create') }}'
+                            class=" btn btn-sm btn-light">
+                            Add New Recharge
+                        </a>
+                    </div>
+
+
                 </div>
             </div>
             <div class="card-body">
@@ -36,7 +44,7 @@
                             <td>{{ ucwords($recharge->details) }}</td>
                           
                             <td>
-                                <a href="{{ route('recharge.edit', $recharge->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="{{ route('recharge.edit', $recharge->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                
                                 <form action="{{ route('recharge.destroy', $recharge->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this recharge?');">
                                     @csrf

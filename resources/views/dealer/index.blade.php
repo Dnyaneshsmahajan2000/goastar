@@ -7,8 +7,17 @@
             <div class="card-header p-2 bg-primary ">
                 <div class="d-sm-flex align-items-center justify-content-between">
                     <h6 class="mb-sm-0 text-white">All Dealers</h6>
+                    <div class="page-title-right">
+                        <a title="Alt + A" id='view-all-button' href='{{ @route('dealer.create') }}'
+                            class=" btn btn-sm btn-light">
+                            Add New Dealer
+                        </a>
+                    </div>
+
+
                 </div>
             </div>
+          
             <div class="card-body">
                
                 <div class="table-responsive">
@@ -37,7 +46,7 @@
                             <td>{{ ucwords($dealer->city) }}</td>
                             <td>{{ $dealer->state }}</td>
                             <td>
-                                <a href="{{ route('dealer.edit', $dealer->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                                <a href="{{ route('dealer.edit', $dealer->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                
                                 <form action="{{ route('dealer.destroy', $dealer->id) }}" method="POST" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this dealer?');">
                                     @csrf
