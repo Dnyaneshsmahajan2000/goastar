@@ -79,6 +79,5 @@
             </div>
         </div><!-- end card -->
     </div>
-</div>
 
 @stop

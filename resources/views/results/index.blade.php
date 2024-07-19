@@ -25,7 +25,6 @@
                             <form action="{{ $game_result ? route('results.closeSave') : route('results.openSave') }}"
                                 class="needs-validation" id="useradd-form" novalidate method="POST">
                                 @csrf
-
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
