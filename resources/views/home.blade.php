@@ -45,8 +45,8 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="avatar-sm flex-shrink-0">
-                                        <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
-                                            <i class="ri-file-list-3-line"></i>
+                                        <span class="avatar-title bg-soft-danger text-danger rounded-2 fs-2">
+                                            <i class="ri-gamepad-fill"></i>
                                         </span>
                                     </div>
                                     <div class="flex-grow-1 overflow-hidden ms-3">
@@ -86,7 +86,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="avatar-sm flex-shrink-0">
                                         <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
-                                            <i class="ri-file-list-3-line"></i>
+                                            <i class=" ri-user-add-fill"></i>
                                         </span>
                                     </div>
                                     <div class="flex-grow-1 overflow-hidden ms-3">
@@ -108,8 +108,8 @@
                             <div class="card-body">
                                 <div class="d-flex align-items-center">
                                     <div class="avatar-sm flex-shrink-0">
-                                        <span class="avatar-title bg-soft-warning text-warning rounded-2 fs-2">
-                                            <i class="ri-file-list-3-line"></i>
+                                        <span class="avatar-title bg-soft-secondary text-secondary rounded-2 fs-2">
+                                            <i class="ri-hand-coin-fill"></i>
                                         </span>
                                     </div>
                                     <div class="flex-grow-1 overflow-hidden ms-3">

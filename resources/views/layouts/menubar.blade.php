@@ -72,7 +72,7 @@
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts3" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarLayouts3">
-                        <i class='ri-team-fill'></i> <span data-key="t-apps">Games</span>
+                        <i class='ri-gamepad-fill'></i> <span data-key="t-apps">Games</span>
                     </a>
                     <div class="collapse menu-dropdown" id="sidebarLayouts3">
                         <ul class="nav nav-sm flex-column">
@@ -89,16 +89,16 @@
 
                 <li class='nav-item'>
                     <a id='menu-home' class='nav-link menu-link' href='{{ route('dealer.create') }}'>
-                        <i class='ri-home-fill'></i> <span data-key='t-authentication'>Dealers</span>
+                        <i class='ri ri-user-add-fill'></i> <span data-key='t-authentication'>Dealers</span>
                     </a>
                 </li>
 
                 <li class='nav-item'>
                     <a id='menu-home' class='nav-link menu-link' href='{{ route('recharge.create') }}'>
-                        <i class='ri-home-fill'></i> <span data-key='t-authentication'>Recharges</span>
+                        <i class='ri-hand-coin-fill'></i> <span data-key='t-authentication'>Recharges</span>
                     </a>
                 </li>
-
+                
                 <li class='nav-item'>
                     <a id='menu-home' class='nav-link menu-link' href='{{ route('home') }}'>
                         <i class='ri-home-fill'></i> <span data-key='t-authentication'>Home</span>
