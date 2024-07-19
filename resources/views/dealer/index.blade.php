@@ -14,6 +14,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>Sr.No</th>
                             <th>Name</th>
                             <th>Mobile</th>
                             <th>Email</th>
@@ -23,8 +24,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $count=1;
+                        @endphp
                         @foreach($dealers as $dealer)
                         <tr>
+                            <td>{{$count++}}</td>
                             <td>{{ ucwords($dealer->name) }}</td>
                             <td>{{ $dealer->mobile }}</td>
                             <td>{{ $dealer->email }}</td>

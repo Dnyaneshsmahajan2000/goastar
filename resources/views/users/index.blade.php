@@ -18,6 +18,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>Sr.No</th>
                             <th>Name</th>
                             <th>Mobile</th>
                             <th>Address</th>
@@ -26,8 +27,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $count=1;
+                        @endphp
                         @foreach($users as $user)
                         <tr>
+                            <td>{{$count++}}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->mobile }}</td>
                             <td>{{ $user->address }}</td>
