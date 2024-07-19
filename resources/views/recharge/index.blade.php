@@ -14,6 +14,7 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th>Sr.No</th>
                             <th>Date</th>
                             <th>Dealer Name</th>             
                             <th>Amount</th>
@@ -22,8 +23,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $count=1;
+                        @endphp
                         @foreach($recharges as $recharge)
                         <tr>
+                            <td>{{$count++}}</td>
                             <td>{{ $recharge->date }}</td>
                             <td>{{ ucwords($recharge->DealerName->name) }}</td>       
                             <td>{{ $recharge->amount }}</td>
