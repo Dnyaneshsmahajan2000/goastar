@@ -43,8 +43,16 @@
                     </a>
                 </li>
 
+                <li class='nav-item'>
+                    <a id='menu-home' class='nav-link menu-link' href='{{ route('user.create') }}'>
+                        <i class='ri-team-fill'></i> <span data-key='t-authentication'>Users</span>
+                    </a>
+                </li>
+
+
+
                 <!-- Masters Menu -->
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarApps">
                         <i class='ri-team-fill'></i> <span data-key="t-apps">Users</span>
@@ -60,7 +68,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts3" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarLayouts3">
@@ -72,14 +80,31 @@
                                 <a href="{{ route('game.index') }}" class="nav-link" data-key="t-calendar">All Games</a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ route('game.index') }}" class="nav-link" data-key="t-chat">Manage All
+                                <a href="{{ route('game.manage') }}" class="nav-link" data-key="t-chat">Manage All
                                     Games</a>
                             </li>
                         </ul>
                     </div>
                 </li>
 
-                <li class="nav-item">
+                <li class='nav-item'>
+                    <a id='menu-home' class='nav-link menu-link' href='{{ route('dealer.create') }}'>
+                        <i class='ri-home-fill'></i> <span data-key='t-authentication'>Dealers</span>
+                    </a>
+                </li>
+
+                <li class='nav-item'>
+                    <a id='menu-home' class='nav-link menu-link' href='{{ route('recharge.create') }}'>
+                        <i class='ri-home-fill'></i> <span data-key='t-authentication'>Recharges</span>
+                    </a>
+                </li>
+
+                <li class='nav-item'>
+                    <a id='menu-home' class='nav-link menu-link' href='{{ route('home') }}'>
+                        <i class='ri-home-fill'></i> <span data-key='t-authentication'>Home</span>
+                    </a>
+                </li>
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts2" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarLayouts2">
                         <i class='ri-user-3-fill'></i> <span data-key="t-layouts">Dealers</span>
@@ -96,8 +121,8 @@
                             </li>
                         </ul>
                     </div>
-                </li>
-                <li class="nav-item">
+                </li> --}}
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarLayouts5" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarLayouts5">
                         <i class='ri-file-text-fill'></i>  <span data-key="t-layouts">Recharges</span>
@@ -114,7 +139,7 @@
                             </li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
                 <!-- Reports Menu -->
                 <li class='nav-item'>
                     <a id='menu-masters4' class='nav-link menu-link' href='#' data-bs-toggle='collapse'
