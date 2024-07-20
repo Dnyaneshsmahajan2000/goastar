@@ -92,6 +92,29 @@
                         <i class='ri ri-user-add-fill'></i> <span data-key='t-authentication'>Dealers</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarLayouts5" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarLayouts5">
+                        <i class='ri-file-text-fill'></i>  <span data-key="t-layouts">Results</span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarLayouts5">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('results.create') }}" class="nav-link" data-key="t-two-column">Set
+                                    Results</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('results.index') }}" class="nav-link"
+                                    data-key="t-two-column">View All Results</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                {{-- <li class='nav-item'>
+                    <a id='menu-home' class='nav-link menu-link' href='{{ route('results.index') }}'>
+                        <i class='ri-file-list-fill'></i> <span data-key='t-authentication'>Results</span>
+                    </a>
+                </li> --}}
 
                 <li class='nav-item'>
                     <a id='menu-home' class='nav-link menu-link' href='{{ route('recharge.create') }}'>
@@ -118,24 +141,7 @@
                         </ul>
                     </div>
                 </li> --}}
-                {{-- <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarLayouts5" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarLayouts5">
-                        <i class='ri-file-text-fill'></i>  <span data-key="t-layouts">Recharges</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarLayouts5">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="{{ route('recharge.create') }}" class="nav-link" data-key="t-two-column">Add
-                                    Recharge</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('recharge.index') }}" class="nav-link"
-                                    data-key="t-two-column">View All Recharges</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> --}}
+
                 <!-- Reports Menu -->
                 <li class='nav-item'>
                     <a id='menu-masters4' class='nav-link menu-link' href='#' data-bs-toggle='collapse'

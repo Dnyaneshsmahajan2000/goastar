@@ -47,19 +47,23 @@ Route::middleware(['web', 'auth'])->group(function () {
 
 
     Route::get('/results', [ResultController::class, 'index'])->name('results.index');
+    Route::get('/results/set', [ResultController::class, 'create'])->name('results.create');
     Route::post('/results/store', [ResultController::class, 'store'])->name('results.store');
+    Route::get('/results/{id}/edit', [ResultController::class, 'edit'])->name('results.edit');
+    Route::put('/result/{id}/update', [ResultController::class, 'update'])->name('results.update');
+    Route::delete('/results/{id}/delete', [ResultController::class, 'delete'])->name('results.delete');
     Route::post('/results/openSave', [ResultController::class, 'storeOpenTimeResult'])->name('results.openSave');
     Route::post('/results/closeSave', [ResultController::class, 'storecloseTimeResult'])->name('results.closeSave');
 
     Route::put('dealer/{id}/update', [DealerController::class, 'update'])->name('dealer.update');
     Route::delete('dealer/{id}/delete', [DealerController::class, 'destroy'])->name('dealer.destroy');
 
-    Route::get('recharge',[RechargeController::class,'index'])->name('recharge.index');
-    Route::get('recharge/create',[RechargeController::class,'create'])->name('recharge.create');
-    Route::post('recharge/create/save',[RechargeController::class,'store'])->name('recharge.store');
-    Route::get('recharge/{id}/edit',[RechargeController::class,'edit'])->name('recharge.edit');
-    Route::put('recharge/{id}/update',[RechargeController::class,'update'])->name('recharge.update');
-    Route::delete('recharge/{id}/delete',[RechargeController::class,'destroy'])->name('recharge.destroy');
+    Route::get('recharge', [RechargeController::class, 'index'])->name('recharge.index');
+    Route::get('recharge/create', [RechargeController::class, 'create'])->name('recharge.create');
+    Route::post('recharge/create/save', [RechargeController::class, 'store'])->name('recharge.store');
+    Route::get('recharge/{id}/edit', [RechargeController::class, 'edit'])->name('recharge.edit');
+    Route::put('recharge/{id}/update', [RechargeController::class, 'update'])->name('recharge.update');
+    Route::delete('recharge/{id}/delete', [RechargeController::class, 'destroy'])->name('recharge.destroy');
 
 
 

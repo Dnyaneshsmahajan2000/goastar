@@ -40,7 +40,7 @@ class HomeController extends Controller
         $games = Game::count();
         $results = Result::count();
         $dealers = Dealer::count();
-        $recharges = Recharge::count();
+        $recharges = Recharge::sum('amount');
         return view('home', compact('users','games','results','dealers', 'recharges'));
     }
 }
