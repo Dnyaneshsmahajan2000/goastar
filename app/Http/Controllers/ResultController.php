@@ -57,15 +57,17 @@ class ResultController extends Controller
         $result->open_1 = $request->open_1;
         $result->close_3 = $request->close_3;
         $result->close_1 = $request->close_1;
-        $result->save(); 
+        $result->save();
         return redirect()->route('results.index')->with('success', 'Result updated successfully.');
     }
 
 
 
-    public function storeCloseTimeResult(Request $request)
+    public function storeCloseTimeResult(Request $request, $id)
     {
-        $result = Result::find($request->game_id);
+        // return $request->all();
+        $result = Result::findOrFail($id);
+        // return $result = Result::findOrFail($id);
         // $result->game_id = $request->game_id;
         $result->close_3 = $request->close_3;
         $result->close_1 = $request->close_1;

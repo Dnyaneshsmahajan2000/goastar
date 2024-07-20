@@ -53,7 +53,7 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::put('/result/{id}/update', [ResultController::class, 'update'])->name('results.update');
     Route::delete('/results/{id}/delete', [ResultController::class, 'delete'])->name('results.delete');
     Route::post('/results/openSave', [ResultController::class, 'storeOpenTimeResult'])->name('results.openSave');
-    Route::post('/results/closeSave', [ResultController::class, 'storecloseTimeResult'])->name('results.closeSave');
+    Route::post('/results/{id}/closeSave', [ResultController::class, 'storecloseTimeResult'])->name('results.closeSave');
 
     Route::put('dealer/{id}/update', [DealerController::class, 'update'])->name('dealer.update');
     Route::delete('dealer/{id}/delete', [DealerController::class, 'destroy'])->name('dealer.destroy');
