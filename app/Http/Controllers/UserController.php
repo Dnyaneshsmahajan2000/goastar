@@ -52,7 +52,7 @@ class UserController extends Controller
             'confirm_password' => 'required|same:new_password',
         ]);
 
-        return $user = User::user($id);
+         $user = User::find($id);
         $user->passord;
         if (!Hash::check($request->old_password, $user->password)) {
             return redirect()->back()->with('error', 'Old password is incorrect.');
