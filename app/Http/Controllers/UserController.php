@@ -91,6 +91,66 @@ class UserController extends Controller
      * Show the form for creating a new resource.
      */
     
+     public function permission($id)
+     {
+         $access = [
+             'Home' => ['add' => 0, 'update' => 0],
+             'Masters' => ['add' => 0, 'update' => 0],
+             'Ledgers' => ['add' => 0, 'update' => 0],
+             'Employee' => ['add' => 0, 'update' => 0],
+             'Expenses_Categories' => ['add' => 0, 'update' => 0],
+             'Journal' => ['add' => 0, 'update' => 0],
+             'Godown' => ['add' => 0, 'update' => 0],
+             'Sale' => ['add' => 0, 'update' => 0],
+             'Purchase' => ['add' => 0, 'update' => 0],
+             'Machines' => ['add' => 0, 'update' => 0],
+             'Sale_Return' => ['add' => 0, 'update' => 0],
+             'Purchase_Return' => ['add' => 0, 'update' => 0],
+             'Receipt' => ['add' => 0, 'update' => 0],
+             'Expenses' => ['add' => 0, 'update' => 0],
+             'Payment' => ['add' => 0, 'update' => 0],
+             'Reports' => ['add' => 0, 'update' => 0],
+             'Order' => ['add' => 0, 'update' => 0],
+             'Stock_journal' => ['add' => 0, 'update' => 0],
+             'Groups' => ['add' => 0, 'update' => 0],
+             'Item_Groups' => ['add' => 0, 'update' => 0],
+             'Item_Category' => ['add' => 0, 'update' => 0],
+             'Items(Finish Good/Raw Material)' => ['add' => 0, 'update' => 0],
+             'Employee_Expenses' => ['add' => 0, 'update' => 0],
+             'Employee_Attendance' => ['add' => 0, 'update' => 0],
+             'Verfiy_Employee_Expenses' => ['add' => 0, 'update' => 0],
+             'Generate_Employee_Salary' => ['add' => 0, 'update' => 0],
+             'Manufacturing' => ['add' => 0, 'update' => 0],
+             'Day_Report' => ['add' => 0],
+             'Ledger_Report' => ['add' => 0],
+             'Group_Report' => ['add' => 0],
+             'Godown_Wise_Stock_Report' => ['add' => 0],
+             'Minimum_Stock_Qty_Report' => ['add' => 0],
+             'Sale_Report' => ['add' => 0],
+             'Sale_Return_Report' => ['add' => 0],
+             'Purchase_Report' => ['add' => 0],
+             'Purchase_Return_Report' => ['add' => 0],
+             '30_Days_debtors_Report' => ['add' => 0],
+             'Sale_Order_Difference_Report' => ['add' => 0],
+             'Inactive_Customer' => ['add' => 0],
+             'Receivable_Report' => ['add' => 0],
+             'Payable_Report' => ['add' => 0],
+             'Item_Wise_Stock_Report' => ['add' => 0],
+             'Payment_Report' => ['add' => 0],
+             'Receipt_Report' => ['add' => 0],
+             'Bank_Balance_Report' => ['add' => 0],
+             'Order_Summary_Report' => ['add' => 0],
+             'Order_Report' => ['add' => 0],
+             'voucher_Report' => ['add' => 0],
+ 
+             'Highest_Customer_Report' => ['add' => 0]
+ 
+         ];
+         $user = User::find($id);
+         $permissions = unserialize($user->permission);
+         return view('users.employee-permission', ['access' => $access, 'id' => $id, 'permissions' => $permissions]);
+     }
+     
     public function create()
     {
 

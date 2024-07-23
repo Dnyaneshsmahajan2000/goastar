@@ -1,4 +1,4 @@
-@extends('layouts.app', ['title' => 'All Games'])
+@extends('layouts.app', ['title' => 'All Results'])
 @section('content')
 
     <div class='row'>
@@ -7,7 +7,13 @@
 
                 <div class="card-header p-2 bg-primary ">
                     <div class="d-sm-flex align-items-center justify-content-between">
-                        <h6 class="mb-sm-0 text-white">All Games</h6>
+                        <h6 class="mb-sm-0 text-white">All Results</h6>
+                         <div class="page-title-right">
+                        <a title="Alt + A" id='view-all-button' href='{{ @route('results.create') }}'
+                            class=" btn btn-sm btn-light">
+                            Add New Result
+                        </a>
+                    </div>
                     </div>
                 </div>
                 <div class="card-body">
